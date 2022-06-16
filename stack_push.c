@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 
 /**
  * push - pushes an element to the stack
@@ -6,11 +7,11 @@
  */
 void push(int para)
 {
-	prev = NULL;
+	head = NULL;
 	stact_t *new_node;
-	if (!para || !atoi(para))
+	if (!para)
 	{
-		printf("L<line_number>: usage: push integer");
+		fprintf(stderr, "L<line_number>: usage: push integer", 50);
 		exit(EXIT_FAILURE);
 	}
 
@@ -28,16 +29,14 @@ void push(int para)
 void pall()
 {
 	stack_t *temp;
-	temp = prev
-	if (!prev)
+	temp = head
+	if (!head)
 		return;
-	else
+	
+	while (temp != NULL)
 	{
-		while (temp != NULL)
-		{
-			printf("%d\n", temp->n);
-			temp = temp->next;
-		}
+		printf("%d\n", temp->n);
+		temp = temp->next;
 	}
 }
 

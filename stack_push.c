@@ -5,22 +5,22 @@
  * push - pushes an element to the stack
  * @para - element to push to stack
  */
-void push(int para)
+void push(int para, unsigned int line_num)
 {
 	head = NULL;
 	stact_t *new_node;
 	if (!para)
 	{
-		fprintf(stderr, "L<line_number>: usage: push integer", 50);
+		fprintf(stderr, "L%d: usage: push integer", lin_num);
 		exit(EXIT_FAILURE);
 	}
 
 	new_node = malloc(sizeof(stack_t));
 	if (!new_node)
-		exit(1);
-	new_node->n = i;
-	new_node->next = prev;
-	prev = new_node;
+		exit(EXIT_FAILURE);
+	new_node->n = para;
+	new_node->next = head;
+	head = new_node;
 }
 
 /**
@@ -30,8 +30,6 @@ void pall()
 {
 	stack_t *temp;
 	temp = head
-	if (!head)
-		return;
 	
 	while (temp != NULL)
 	{

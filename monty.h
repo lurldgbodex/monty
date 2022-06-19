@@ -17,8 +17,6 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 
-stack_t *head;
-
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -33,6 +31,16 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void stack_push(int para);
+void stack_push(stack_t **stack, unsigned int line_number, int data);
+void stack_pall(stack_t **stack, unsigned int line_number);
+void stack_pop(stack_t **stack, unsigned int line_number);
+void stack_swap(stack_t **stack, unsigned int line_number);
+void op_instruct(char *string[], stack_t *stack);
+int find_newline(char *list);
+void combfind(char *list, int n);
+int pushint(char *list, int line_no);
+int _strcmp(char *opcode, char *list);
+void free_stack(stack_t *head);
+void _free(char *a[]);
 
 #endif

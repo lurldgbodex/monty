@@ -10,15 +10,15 @@ void op_instruct(char *string[], stack_t *stack)
 	int line_no, i, n;
 
 	instruction_t st[] = {
-		{"pall", stack_pall},
-		{"swap", stack_swap},
-		{"pop", stack_pop},
+		{"pall", pall},
+		{"swap", swap},
+		{"pop", pop},
 		{"null", NULL}
 	};
 	for (line_no = 1, n = 0; string[n + 1]; n++, line_no++)
 	{
 		if (_strcmp("push", string[n]))
-			stack_push(&stack, line_no, pushint(string[n], line_no));
+			push(&stack, line_no, pushint(string[n], line_no));
 		else if (_strcmp("nop", string[n]))
 			;
 		else

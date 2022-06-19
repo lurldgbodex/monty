@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 /**
- * stack_push - pushes an element to the stack
+ * push - pushes an element to the stack
  * @stack: ponter to head of stack
  * @line_number: number of line in files
  * @data: data to push to stack
  */
-void stack_push(stack_t **stack, unsigned int line_number, int data)
+void push(stack_t **stack, unsigned int line_number, int data)
 {
 	stack_t *head = *stack;
 	stack_t *new_node;
@@ -30,11 +30,11 @@ void stack_push(stack_t **stack, unsigned int line_number, int data)
 }
 
 /**
- * stack_pall - prints all the values of the stack
+ * pall - prints all the values of the stack
  * @stack: pointer to head of stack node
  * @line_number: number of lines in file
  */
-void stack_pall(stack_t **stack, unsigned int line_number)
+void pall(stack_t **stack, unsigned int line_number)
 {
 	(void)line_number;
 	stack_t *temp = *stack;
@@ -47,11 +47,11 @@ void stack_pall(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * stack_pop - removes the top element in a stack
+ * pop - removes the top element in a stack
  * @stack: pointer to the head of stack
  * @line_number: number of lines in a file
  */
-void stack_pop(stack_t **stack, unsigned int line_number)
+void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *head = *stack;
 
@@ -68,11 +68,11 @@ void stack_pop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * stack_swap - swaps the top two elements of the stack
+ * swap - swaps the top two elements of the stack
  * @stack: pointer to the head of the stack node
  * @line_number: number of lines in a file
  */
-void stack_swap(stack_t **stack, unsigned int line_number)
+void swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *head = *stack;
 	stack_t *temp;

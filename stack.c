@@ -9,12 +9,12 @@
  */
 void stack_push(stack_t **stack, unsigned int line_number, int data)
 {
-	stack_t *head = *stack
-	stact_t *new_node;
+	stack_t *head = *stack;
+	stack_t *new_node;
 
 	if (stack == NULL)
 	{
-		fprintf(stderr, "L%d: usage: push integer", lin_number);
+		fprintf(stderr, "L%d: usage: push integer", line_number);
 		exit(EXIT_FAILURE);
 	}
 	new_node = malloc(sizeof(stack_t));
@@ -23,10 +23,10 @@ void stack_push(stack_t **stack, unsigned int line_number, int data)
 		exit(EXIT_FAILURE);
 	new_node->prev = NULL;
 	new_node->n = data;
-	new_node->next = stack;
+	new_node->next = *stack;
 	if (*stack)
-		h->prev = new_node;
-	*head = new_node;
+		head->prev = new_node;
+	*stack = new_node;
 }
 
 /**
@@ -36,7 +36,7 @@ void stack_push(stack_t **stack, unsigned int line_number, int data)
  */
 void stack_pall(stack_t **stack, unsigned int line_number)
 {
-	(void)line_number
+	(void)line_number;
 	stack_t *temp = *stack;
 
 	while (temp)

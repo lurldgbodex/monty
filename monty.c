@@ -12,6 +12,8 @@ int main(int ac, char *av[])
 	int n = 0;
 	FILE *fd;
 	size_t bufsize = 1000;
+	static char *string[1000] = {NULL};
+
 
 	if (ac != 2)
 	{
@@ -25,10 +27,10 @@ int main(int ac, char *av[])
 		exit(EXIT_FAILURE);
 	}
 
-	while (getline(&(string[n]), &bufsize, fd) > 0;)
+	while (getline(&(string[n]), &bufsize, fd) > 0)
 		n++;
 	op_instruct(string, stack);
-	free_list(string);
+	_free(string);
 	fclose(fd);
 	return (0);
 }

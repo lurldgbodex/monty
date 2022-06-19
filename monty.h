@@ -1,6 +1,11 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -37,7 +42,7 @@ void stack_pop(stack_t **stack, unsigned int line_number);
 void stack_swap(stack_t **stack, unsigned int line_number);
 void op_instruct(char *string[], stack_t *stack);
 int find_newline(char *list);
-void combfind(char *list, int n);
+int combfind(char *list, int n);
 int pushint(char *list, int line_no);
 int _strcmp(char *opcode, char *list);
 void free_stack(stack_t *head);

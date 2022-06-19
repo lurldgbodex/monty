@@ -33,7 +33,7 @@ void op_instruct(char *string[], stack_t *stack)
 				}
 				i++;
 			}
-			if (_strcmp(st[i].opcode, "null") && !_strcmp([n], "\n"))
+			if (_strcmp(st[i].opcode, "null") && !_strcmp(string[n], "\n"))
 			{
 				fprintf(stderr, "L%u: unknown instruction %s", line_no, string[n]);
 				if (!find_newline(string[n]))
@@ -83,7 +83,7 @@ int find_newline(char *list)
 		{
 			opcode++;
 			list++;
-			if (*opcode == NULL)
+			if (*opcode == '\0')
 				return (1);
 		}
 		else
@@ -143,7 +143,7 @@ int combfind(char *list, int line_no)
 
 	while (list[i])
 	{
-		if (list[i] == NULL || list[i] == '\n')
+		if (list[i] == '\0' || list[i] == '\n')
 			break;
 		if ((list[i] >= '0' && list[i] <= '9') || list[i] == ' ')
 			i++;
